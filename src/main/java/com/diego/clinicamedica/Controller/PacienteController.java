@@ -2,6 +2,7 @@ package com.diego.clinicamedica.Controller;
 
 import com.diego.clinicamedica.Entity.Paciente;
 import com.diego.clinicamedica.Services.PacienteService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -33,7 +34,7 @@ public class PacienteController {
     }
 
     @PostMapping
-    public Paciente cadastrarPaciente(@RequestBody Paciente paciente){
+    public Paciente cadastrarPaciente(@Valid  @RequestBody Paciente paciente){
         return pacienteService.registrarPaciente(paciente);
     }
 
